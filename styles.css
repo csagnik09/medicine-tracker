@@ -1,0 +1,245 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Soft light background color */
+    margin: 0;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.header {
+    background-color: #000000; /* Blue background for the header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    /* border-radius: 8px; */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.left-panel {
+    width: 30%;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-panel {
+    width: 70%;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    height: 80px;
+    font-size: 14px;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    padding: 12px;
+}
+
+/* Button Colors */
+button.log-custom {
+    background-color: #007BFF; /* Blue */
+    color: white;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centers horizontally */
+    transition: background-color 0.3s ease;
+}
+
+
+button.log-custom:hover {
+    background-color: #333333; /* Darker blue on hover */
+}
+
+button.reset-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+button.reset-btn:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+button.export-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+button.export-btn:hover {
+    background-color: #218838; /* Darker green */
+}
+
+button.import-btn {
+    background-color: #ffc107; /* Yellow */
+    color: white;
+}
+
+button.import-btn:hover {
+    background-color: #e0a800; /* Darker yellow */
+}
+
+/* Table Buttons */
+.table-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Alternate row coloring */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* Delete Button */
+button.delete-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 12px;
+}
+
+button.delete-btn:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+/* Checkbox & Date Picker */
+label {
+    font-size: 16px;
+}
+
+/* Styled Checkbox */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #007BFF;
+}
+
+/* Date Section */
+.date-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Date Input Styling */
+#dateInput {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Ensure proper visibility for date input when checkbox is checked */
+#dateInput {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ #dateInput {
+    display: block; /* Show date input when checkbox is checked */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel, .right-panel {
+        width: 90%;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td, th {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- External Libraries for CSV and Excel Parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">Medicine Tracker</div>
+
+    <div class="container">
+        <!-- Left Panel (Data Entry) -->
+        <div class="left-panel">
+            <h2>Data Entry Panel</h2>
+
+            <!-- Medicine Name -->
+            <input type="text" id="medicineNameInput" placeholder="Enter Medicine Name">
+
+            <!-- Custom Time Input -->
+            <input type="time" id="manualTime">
+
+            <!-- Remark Textbox -->
+            <textarea id="remarkInput" placeholder="Add a remark (optional)"></textarea>
+
+            <!-- Old Entry Checkbox -->
+            <div class="date-checkbox">
+                <input type="checkbox" id="oldEntryCheckbox" onchange="toggleDateInput()">
+                <label for="oldEntryCheckbox">Add Old Entry</label>
+            </div>
+
+            <!-- Date Input (Hidden by Default) -->
+            <input type="date" id="dateInput" style="display: none;">
+
+            <!-- Log Medicine Button -->
+            <button class="log-custom" onclick="logCustomMedicine()">Log Medicine Time</button>
+        </div>
+
+        <!-- Right Panel (Log Preview) -->
+        <div class="right-panel">
+            <h2>Medicine History</h2>
+            <div class="table-buttons">
+                <button class="export-btn" onclick="exportToExcel()">Export to Excel</button>
+                <input type="file" id="importFile" accept=".csv,.xlsx" hidden onchange="importFromExcel(event)">
+                <button class="import-btn" onclick="document.getElementById('importFile').click()">Import from Excel</button>
+                <button class="reset-btn" onclick="resetApp()">Clear Data</button>
+            </div>
+
+            <!-- Table -->
+            <table id="historyTable">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Time Slot</th>
+                        <th>Logged At</th>
+                        <th>Remark</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="historyList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
