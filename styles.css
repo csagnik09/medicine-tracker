@@ -28,7 +28,7 @@ body {
 }
 
 .header:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #000000; /* Darker blue on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
@@ -95,7 +95,7 @@ button.log-custom {
 
 
 button.log-custom:hover {
-    background-color: #333333; /* Darker blue on hover */
+    background-color: #007bff8b; /* Darker blue on hover */
 }
 
 button.reset-btn {
